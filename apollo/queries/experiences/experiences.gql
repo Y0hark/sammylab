@@ -1,0 +1,12 @@
+query Experiences {
+    experiences {
+        title
+        description
+        image {
+            url
+        }
+        date_start
+        date_end
+        location
+    }
+}

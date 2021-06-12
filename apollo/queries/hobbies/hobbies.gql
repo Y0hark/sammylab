@@ -1,0 +1,9 @@
+query Hobbies {
+    hobbies {
+        title
+        image {
+            url
+        }
+        description
+    }
+}

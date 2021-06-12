@@ -1,0 +1,11 @@
+query Projects_Showcases {
+    id
+    description
+    showcase {
+        url
+    }
+    date_project
+    version
+    finished
+    project_category
+}
