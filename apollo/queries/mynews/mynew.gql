@@ -1,0 +1,11 @@
+query MyNews($id: ID!){
+  myNew (id: $id) {
+    id
+    title
+    description
+    date_of_pub
+    cover {
+      url
+    }
+  }
+}

@@ -1,0 +1,11 @@
+query MyNews {
+  myNews {
+    id
+    title
+    description
+    date_of_pub
+    cover {
+      url
+    }
+  }
+}

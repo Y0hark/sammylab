@@ -4,7 +4,7 @@ export default {
 
   // Modify env variable
   env: {
-    strapiBaseUri: process.env.API_URL || 'http://localhost:1337'
+    strapiBaseUri: process.env.API_URL || 'https://serene-reef-47629.herokuapp.com'
   },
 
   // Disable server-side rendering: https://go.nuxtjs.dev/ssr-mode
@@ -87,14 +87,14 @@ export default {
   strapi: {
     entities:
     ['categories', 'articles', 'hobbies', 'projects_showcases', 'experiences', 'skills', 'studies', 'presentation_site'],
-    url: 'http://localhost:1377'
+    url: 'https://serene-reef-47629.herokuapp.com'
   },
 
   // Configuring apollo module for nuxtjs
   apollo: {
     clientConfigs: {
       default: {
-        httpEndpoint: process.env.BACKEND_URL || 'http://localhost:1337/graphql'
+        httpEndpoint: process.env.BACKEND_URL || 'https://serene-reef-47629.herokuapp.com/graphql'
       }
     }
   },
