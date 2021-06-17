@@ -4,11 +4,17 @@
       <v-col />
       <v-col cols="7">
         <v-card outlined class="pa-2">
-          <h1 align="center" justify="center">
+          <h1 v-if="presentationSite.title != undefined" align="center" justify="center">
             {{ presentationSite.title }}
           </h1>
+          <h1 v-else>
+            Loading Title ...
+          </h1>
           <!-- eslint-disable-next-line vue/no-v-html -->
-          <div v-html="$md.render(String(presentationSite.copy))" />
+          <div v-if="presentationSite.copy != undefined" v-html="$md.render(String(presentationSite.copy))" />
+          <div v-else>
+            Loading...
+          </div>
         </v-card>
       </v-col>
       <v-col />

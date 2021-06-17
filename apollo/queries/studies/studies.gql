@@ -1,0 +1,13 @@
+query Studies {
+  studies {
+    id
+    title
+    description
+    date_start
+    date_end
+    location
+    cover {
+      url
+    }
+  }
+}

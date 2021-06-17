@@ -1,6 +1,9 @@
 <template>
   <nav>
-    <v-app-bar dense>
+    <v-app-bar
+      dense
+      fixed
+    >
       <v-app-bar-nav-icon @click="drawer = !drawer" />
       <v-app-bar-title class="text-uppercase">
         <span class="font-weight-light">Sammy's</span>

@@ -1,0 +1,10 @@
+query generalpresentation {
+  generalPresentation {
+    id
+    title
+    copy
+    profile_pic {
+      url
+    }
+  }
+}

@@ -86,7 +86,7 @@ export default {
   // Configuring strapi module for nuxtjs
   strapi: {
     entities:
-    ['categories', 'articles', 'hobbies', 'projects_showcases', 'experiences', 'skills', 'studies', 'presentation_site'],
+    ['categories', 'articles', 'hobbies', 'projects_showcases', 'experiences', 'skills', 'studies', 'presentation_site', 'general_presentation'],
     url: 'https://serene-reef-47629.herokuapp.com'
   },
 
