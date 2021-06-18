@@ -1,8 +1,11 @@
 <template>
   <v-app dark>
     <nav-bar />
-    <v-row />
-    <Nuxt />
+    <v-main>
+      <v-container grid-list-xs fill-height>
+        <Nuxt />
+      </v-container>
+    </v-main>
   </v-app>
 </template>
 

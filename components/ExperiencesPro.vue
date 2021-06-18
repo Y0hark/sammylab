@@ -1,6 +1,6 @@
 <template>
   <v-col cols="7">
-    <v-card class="pa-2">
+    <v-card class="pa-2" outlined>
       <v-card-title primary-title>
         {{ experienceProfesionnelle.title }}
       </v-card-title>
@@ -13,9 +13,8 @@
         Date de début : <span class="exp-assets">{{ experienceProfesionnelle.date_start }}</span> <br>
         Date de fin : <span class="exp-assets">{{ experienceProfesionnelle.date_end }}</span>
       </v-card-text>
-      <v-card-text>
-        {{ experienceProfesionnelle.description }}
-      </v-card-text>
+      <!-- eslint-disable-next-line vue/no-v-html -->
+      <v-card-text v-html="$md.render(String(experienceProfesionnelle.description))" />
     </v-card>
   </v-col>
 </template>

@@ -6,11 +6,10 @@
       </v-card-title>
       <v-img
         height="auto"
-        :src="generalpresentation.profile_pic"
+        :src="Object(generalpresentation.profile_pic).url"
       />
-      <v-card-text>
-        {{ generalpresentation.copy }}
-      </v-card-text>
+      <!-- eslint-disable-next-line vue/no-v-html -->
+      <v-card-text v-html="$md.render(String(generalpresentation.copy))" />
     </v-card>
   </v-col>
 </template>

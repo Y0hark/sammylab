@@ -1,14 +1,22 @@
 <template>
   <v-col cols="7">
-    <v-card class="pa-2">
+    <v-card class="pa-2" outlined>
       <v-card-title primary-title>
         {{ skill.title }}
+        <v-expansion-panels>
+          <v-expansion-panel>
+            <v-expansion-panel-header>
+              Description
+            </v-expansion-panel-header>
+            <v-expansion-panel-content>
+              <!-- eslint-disable-next-line vue/no-v-html -->
+              <v-card-text v-html="$md.render(String(skill.description))" />
+            </v-expansion-panel-content>
+          </v-expansion-panel>
+        </v-expansion-panels>
       </v-card-title>
       <v-card-text>
-        {{ skill.description }}
-      </v-card-text>
-      <v-card-text>
-        <v-progress-linear
+        Maîtrise - {{ skill.mastery }}%<v-progress-linear
           color="primary"
           stream
           buffer-value="0"

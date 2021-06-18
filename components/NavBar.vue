@@ -3,6 +3,7 @@
     <v-app-bar
       dense
       fixed
+      app
     >
       <v-app-bar-nav-icon @click="drawer = !drawer" />
       <v-app-bar-title class="text-uppercase">

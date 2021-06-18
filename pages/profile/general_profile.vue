@@ -4,7 +4,7 @@
 
     <v-row>
       <v-col />
-      <general-presentation :generalpresentation="generalpresentation" />
+      <general-presentation :generalpresentation="generalPresentation" />
       <v-col />
     </v-row>
 
@@ -47,10 +47,10 @@ export default {
   components: { GeneralPresentation, ExperiencesPro, ListHeader, StudiesCard, SkillsCard },
   data () {
     return {
-      generalpresentation: {},
-      skills: {},
-      experiences: {},
-      studies: {},
+      generalPresentation: {},
+      skills: [],
+      experiences: [],
+      studies: [],
       myprofile: {
         title: 'Mon profil',
         description: 'Ici vous trouverez tout ce qui concerne mon profil professionnel via un parcours détaillé.😁'
@@ -70,7 +70,7 @@ export default {
     }
   },
   apollo: {
-    generalpresentation: {
+    generalPresentation: {
       prefetch: true,
       query: generalPresentationQuery
     },
