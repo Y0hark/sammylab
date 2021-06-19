@@ -4,10 +4,12 @@
       <v-card-title primary-title>
         {{ experienceProfesionnelle.title }}
       </v-card-title>
-      <v-img
-        height="auto"
-        :src="experienceProfesionnelle.image.url"
-      />
+      <v-card-text>
+        <v-img
+          height="auto"
+          :src="experienceProfesionnelle.image.url"
+        />
+      </v-card-text>
       <v-card-text>
         Localisation : <span class="exp-assets">{{ experienceProfesionnelle.location }}</span> <br>
         Date de début : <span class="exp-assets">{{ experienceProfesionnelle.date_start }}</span> <br>

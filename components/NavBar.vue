@@ -105,9 +105,9 @@ export default {
         { title: 'Mes passions', icon: 'mdi-heart', path: '/profile/hobbies' }
       ],
       portfolio: [
-        { title: 'Mes sites web', icon: 'mdi-web', path: '/portfolio/portfolio_sites' },
-        { title: 'Mes logiciels', icon: 'mdi-application-cog', path: '/portfolio/portfolio_apps' },
-        { title: 'Mes expérimentations', icon: 'mdi-flask', path: '/portfolio/portfolio_experiments' }
+        { title: 'Mes projets Web', icon: 'mdi-web', path: '/portfolio/portfolio_sites' },
+        { title: 'Mes projets Apps/Code', icon: 'mdi-application-cog', path: '/portfolio/portfolio_apps' },
+        { title: 'Mes projets Expériences', icon: 'mdi-flask', path: '/portfolio/portfolio_experiments' }
       ]
     }
   }

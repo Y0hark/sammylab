@@ -19,17 +19,9 @@
       </v-col>
       <v-col />
     </v-row>
-    <v-row>
-      <v-col />
-      <v-col cols="7">
-        <v-card align="center" outlined class="pa-2">
-          <h2>Mes actualités</h2>
-          <br>
-          <p>Ci-dessous sont listées les actualités de mon site!</p>
-        </v-card>
-      </v-col>
-      <v-col />
-    </v-row>
+
+    <list-header :title="header.title" :description="header.description" />
+
     <v-row v-for="myNew in myNews" :key="myNew.id">
       <v-col />
 
@@ -40,15 +32,20 @@
   </v-container>
 </template>
 <script>
+import ListHeader from '../components/ListHeader.vue'
 import CardNews from '../components/CardNews.vue'
 import presentationSite from '~/apollo/queries/unics/presentation_site.gql'
 import myNewsQuerry from '~/apollo/queries/mynews/mynews.gql'
 export default {
-  components: { CardNews },
+  components: { CardNews, ListHeader },
   data () {
     return {
       presentationSite: {},
-      myNews: {}
+      myNews: {},
+      header: {
+        title: 'Mes actualités',
+        description: 'Ci-dessous sont listées les actualités de mon site!'
+      }
     }
   },
   apollo: {

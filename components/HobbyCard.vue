@@ -1,28 +1,31 @@
 <template>
   <v-col cols="7">
     <v-card class="pa-2" outlined>
-      <v-card-title primary-title>
-        {{ generalpresentation.title }}
+      <v-card-title>
+        {{ hobby.title }}
       </v-card-title>
       <v-card-text align="center">
         <v-img
-          height="200px"
-          width="200px"
-          :src="Object(generalpresentation.profile_pic).url"
+          height="auto"
+          :src="hobby.image.url"
         />
       </v-card-text>
       <!-- eslint-disable-next-line vue/no-v-html -->
-      <v-card-text v-html="$md.render(String(generalpresentation.copy))" />
+      <v-card-text v-html="$md.render(String(hobby.description))" />
     </v-card>
   </v-col>
 </template>
 <script>
 export default {
   props: {
-    generalpresentation: { type: Object, default: null }
+    hobby: { type: Object, default: null }
   }
 }
 </script>
 <style>
-
+.date-title {
+  color: #757575;
+  font-weight: normal;
+  font-size: 15px;
+}
 </style>

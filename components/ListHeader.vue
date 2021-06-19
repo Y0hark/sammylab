@@ -2,10 +2,10 @@
   <v-row>
     <v-col />
     <v-col cols="7">
-      <h3 align="center" class="pa-2">
+      <h2 align="center" class="pa-2">
         {{ title }}
-      </h3>
-      <p class="small-intro pa-2">
+      </h2>
+      <p class="small-intro pa-2" align="center">
         {{ description }}
       </p>
     </v-col>

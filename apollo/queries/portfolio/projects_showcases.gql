@@ -1,11 +1,14 @@
-query Projects_Showcases {
-    id
-    description
-    showcase {
-        url
+query projectsshowcases {
+    projectsShowcases {
+        id
+        title
+        description
+        showcase {
+            url
+        }
+        date_project
+        version
+        finished
+        project_category
     }
-    date_project
-    version
-    finished
-    project_category
 }

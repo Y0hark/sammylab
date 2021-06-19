@@ -4,10 +4,12 @@
       <v-card-title primary-title>
         {{ study.title }}
       </v-card-title>
-      <v-img
-        height="auto"
-        :src="study.cover.url"
-      />
+      <v-card-text>
+        <v-img
+          height="auto"
+          :src="study.cover.url"
+        />
+      </v-card-text>
       <v-card-text>
         Localisation : <span class="exp-assets">{{ study.location }}</span> <br>
         Date de début : <span class="exp-assets">{{ study.date_start }}</span> <br>
