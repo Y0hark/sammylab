@@ -6,34 +6,20 @@
         <Nuxt />
       </v-container>
     </v-main>
+    <footer-site />
   </v-app>
 </template>
 
 <script>
+import FooterSite from '../components/FooterSite.vue'
 import NavBar from '../components/NavBar.vue'
 export default {
-  components: { NavBar },
+  components: { NavBar, FooterSite },
   data () {
     return {
       clipped: false,
       drawer: false,
-      fixed: false,
-      items: [
-        {
-          icon: 'mdi-apps',
-          title: 'Welcome',
-          to: '/'
-        },
-        {
-          icon: 'mdi-chart-bubble',
-          title: 'Inspire',
-          to: '/inspire'
-        }
-      ],
-      miniVariant: false,
-      right: true,
-      rightDrawer: false,
-      title: 'Vuetify.js'
+      fixed: false
     }
   }
 }

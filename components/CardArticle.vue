@@ -6,9 +6,14 @@
         <v-spacer />
         <span class="date-title">{{ article.category.name }} - {{ article.date_of_pub }}</span>
       </v-card-title>
-
+      <v-card-text>
+        <v-img
+          height="auto"
+          :src="article.image.url"
+        />
+      </v-card-text>
       <!-- eslint-disable-next-line vue/no-v-html -->
-      <v-card-text v-html="$md.render(String(preview(article.description)+'...'))" />
+      <v-card-text v-html="$md.render(String(preview(article.copy)+'...'))" />
       <v-card-actions>
         <v-spacer />
         <v-btn text color="primary" :to="{ name: 'articles-id', params: {id: article.id} }">

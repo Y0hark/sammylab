@@ -14,13 +14,12 @@
 <script>
 import ListHeader from '../../components/ListHeader.vue'
 import CardArticle from '../../components/CardArticle.vue'
-import articlesQuery from '~/apollo/queries/mynews/mynews.gql'
+import articlesQuery from '~/apollo/queries/articles/articles.gql'
 export default {
   components: { CardArticle, ListHeader },
   data () {
     return {
-      presentationSite: {},
-      myNews: {},
+      articles: {},
       header: {
         title: 'Mes posts et articles',
         description: 'Voici la liste des articles que j\'ai publiés, des tutos et cours que j\'ai mis en ligne. 😄'

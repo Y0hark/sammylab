@@ -65,7 +65,7 @@
             </v-list-item>
           </v-list-group>
 
-          <v-list-item nuxt to="/posts/posts_index">
+          <v-list-item nuxt to="/articles/articles_index">
             <v-list-item-icon>
               <v-icon>mdi-newspaper-variant-multiple-outline</v-icon>
             </v-list-item-icon>
