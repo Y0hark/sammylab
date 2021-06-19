@@ -85,12 +85,25 @@
 
       <v-spacer />
 
-      <v-btn color="icon">
-        <v-icon>mdi-magnify</v-icon>
-      </v-btn>
-      <v-btn color="icon">
-        <v-icon>mdi-apps</v-icon>
-      </v-btn>
+      <div class="text-center">
+        <v-menu offset-y>
+          <template #activator="{ on, attrs }">
+            <v-btn
+              dark
+              icon
+              v-bind="attrs"
+              v-on="on"
+            >
+              <v-icon>mdi-apps</v-icon>
+            </v-btn>
+          </template>
+          <v-list>
+            <v-list-item v-for="(item, i) in items" :key="i">
+              <v-list-item-title><a style="text-decoration=none" :href="item.link" target="_blank" rel="noopener noreferrer">{{ item.title }}</a></v-list-item-title>
+            </v-list-item>
+          </v-list>
+        </v-menu>
+      </div>
     </v-app-bar>
   </nav>
 </template>
@@ -108,7 +121,21 @@ export default {
         { title: 'Mes projets Web', icon: 'mdi-web', path: '/portfolio/portfolio_sites' },
         { title: 'Mes projets Apps/Code', icon: 'mdi-application-cog', path: '/portfolio/portfolio_apps' },
         { title: 'Mes projets Expériences', icon: 'mdi-flask', path: '/portfolio/portfolio_experiments' }
-      ]
+      ],
+      items: {
+        cv: {
+          link: 'https://drive.google.com/file/d/1YV3gYHajh2vqprKM5mmVeSNeVA_mGeud/view?usp=sharing',
+          title: 'Télécharger mon C.V'
+        },
+        mail: {
+          link: 'mailto:samuelgaliere.pro@gmail.com',
+          title: 'M\'envoyer un mail'
+        },
+        git: {
+          link: 'https://github.com/Y0hark/sammylab',
+          title: 'Le repo du projet'
+        }
+      }
     }
   }
 }

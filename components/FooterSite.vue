@@ -9,6 +9,7 @@
         v-for="(icon, i) in icons"
         :key="i"
         :href="icon.link"
+        target="_blank"
         class="mx-4 white--text"
         icon
       >
@@ -54,6 +55,10 @@ export default {
           link: 'https://github.com/Y0hark',
           icon: 'mdi-github'
         },
+        download: {
+          link: 'https://drive.google.com/file/d/1YV3gYHajh2vqprKM5mmVeSNeVA_mGeud/view?usp=sharing',
+          icon: 'mdi-download'
+        },
         vuetify: {
           link: 'https://vuetifyjs.com/en/',
           icon: 'mdi-vuetify'
@@ -61,6 +66,10 @@ export default {
         heroku: {
           link: 'https://dashboard.heroku.com/',
           icon: 'mdi-salesforce'
+        },
+        nuxt: {
+          link: 'https://nuxtjs.org/',
+          icon: 'mdi-nuxt'
         }
       }
     }
