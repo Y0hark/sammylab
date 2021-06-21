@@ -1,4 +1,8 @@
-# frontend
+# Sammy's**Lab**
+
+This is my personal website.
+
+All is built on a briliant stack of super interesting technologies such as Strapi, NuxtJS, Vuetify, Apollo-GraphQL and all that stuff that is making Web Development so quick and entertaining
 
 ## Build Setup
 
