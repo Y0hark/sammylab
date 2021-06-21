@@ -23,7 +23,7 @@ export default {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '' }
+      { hid: 'description', name: 'description', content: 'Agence web freelance marseillaise' }
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
@@ -53,7 +53,8 @@ export default {
   modules: [
     '@nuxtjs/strapi',
     '@nuxtjs/apollo',
-    '@nuxtjs/markdownit'
+    '@nuxtjs/markdownit',
+    '@nuxtjs/robots'
   ],
 
   // Configuring markdownit module for nuxtjs
@@ -98,6 +99,19 @@ export default {
       }
     }
   },
+
+  // Configuting nuxt robots module
+  robots: [
+    {
+      UserAgent: 'Googlebot',
+      Disallow: ['/user', '/admin']
+    },
+    {
+      UserAgent: '*',
+      Disallow: '/admin'
+    }
+
+  ],
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
