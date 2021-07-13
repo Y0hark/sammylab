@@ -2,7 +2,7 @@
   <v-container grid-list-xs>
     <v-row>
       <v-col />
-      <v-col cols="7">
+      <v-col cols="9">
         <v-card>
           <v-card-title primary-title>
             {{ myNew.title }}
@@ -12,6 +12,7 @@
           </v-card-text>
           <!-- eslint-disable-next-line vue/no-v-html -->
           <v-card-text v-html="$md.render(String(myNew.description))" />
+          <content-viewer :article="myNew" />
         </v-card>
       </v-col>
       <v-col />
@@ -19,8 +20,10 @@
   </v-container>
 </template>
 <script>
+import ContentViewer from '../../components/ContentViewer.vue'
 import myNewQuerry from '~/apollo/queries/mynews/mynew.gql'
 export default {
+  components: { ContentViewer },
   data () {
     return {
       myNew: {}

@@ -1,7 +1,7 @@
 <template>
   <v-row>
     <v-col />
-    <v-col cols="7">
+    <v-col cols="9">
       <h2 align="center" class="pa-2">
         {{ title }}
       </h2>

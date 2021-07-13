@@ -23,7 +23,7 @@ export default {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: 'Agence web freelance marseillaise' }
+      { hid: 'description', name: 'description', content: 'Développeur freelance sur marseille' }
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
@@ -94,9 +94,7 @@ export default {
   // Configuring apollo module for nuxtjs
   apollo: {
     clientConfigs: {
-      default: {
-        httpEndpoint: process.env.BACKEND_URL || 'https://sammylab.herokuapp.com/graphql'
-      }
+      default: '/apollo/config/config.js'
     }
   },
 

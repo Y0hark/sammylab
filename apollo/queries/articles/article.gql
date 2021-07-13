@@ -10,5 +10,18 @@ query Articles($id: ID!) {
         category {
             name
         }
+        ContentZone {
+            ... on ComponentBlogParagraphe {
+                copy
+            }
+            ... on ComponentBlogMedias {
+                images {
+                url
+                }
+            }
+            ... on ComponentBlogLinks {
+                link
+            }
+        }
     }
 }

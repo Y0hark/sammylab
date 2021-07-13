@@ -7,5 +7,18 @@ query MyNews {
     cover {
       url
     }
+    ContentZone {
+      ... on ComponentBlogParagraphe {
+        copy
+      }
+      ... on ComponentBlogMedias {
+        images {
+          url
+        }
+      }
+      ... on ComponentBlogLinks {
+        link
+      }
+    }
   }
 }

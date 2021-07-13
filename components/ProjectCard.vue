@@ -1,5 +1,5 @@
 <template>
-  <v-col cols="7">
+  <v-col cols="9">
     <v-card class="pa-2" outlined>
       <v-card-title>
         {{ project.title }}

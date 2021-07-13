@@ -65,7 +65,7 @@ export default {
       },
       skills_header: {
         title: 'Mes compétences',
-        description: 'Et enfin, le détail de toutes mes compétences, techniques et humaines. 👷‍♂️'
+        description: 'Et enfin, le détail de toutes mes compétences techniques. 👷‍♂️'
       }
     }
   },

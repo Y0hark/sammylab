@@ -2,7 +2,7 @@
   <v-container grid-list-xs fluid>
     <v-row>
       <v-col />
-      <v-col cols="7">
+      <v-col cols="9">
         <v-card outlined class="pa-2">
           <h1 v-if="presentationSite.title != undefined" align="center" justify="center">
             {{ presentationSite.title }}

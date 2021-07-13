@@ -2,7 +2,7 @@
   <v-container grid-list-xs>
     <v-row>
       <v-col />
-      <v-col cols="7">
+      <v-col cols="9">
         <v-card>
           <v-card-title primary-title>
             {{ article.title }}
@@ -20,6 +20,7 @@
           </v-card-text>
           <!-- eslint-disable-next-line vue/no-v-html -->
           <v-card-text v-html="$md.render(String(article.copy))" />
+          <content-viewer :article="article" />
         </v-card>
       </v-col>
       <v-col />
@@ -27,8 +28,11 @@
   </v-container>
 </template>
 <script>
+import ContentViewer from '../../components/ContentViewer.vue'
 import articleQuerry from '~/apollo/queries/articles/article.gql'
-export default {
+export default
+{
+  components: { ContentViewer },
   data () {
     return {
       article: {}
