@@ -5,10 +5,12 @@
       fixed
       app
     >
-      <v-app-bar-nav-icon @click="drawer = !drawer" />
+      <v-app-bar-nav-icon class="hidden-md-and-up" @click="drawer = !drawer" />
       <v-app-bar-title class="text-uppercase">
-        <span class="font-weight-light">Sammy's</span>
-        Lab
+        <nuxt-link class="text-decoration-none white--text" to="/">
+          <span class="font-weight-light">Sammy's</span>
+          Lab
+        </nuxt-link>
       </v-app-bar-title>
 
       <v-navigation-drawer v-model="drawer" app absolute temporary>
@@ -29,8 +31,8 @@
             </template>
 
             <v-list-item
-              v-for="(item, i) in profile"
-              :key="i"
+              v-for="(item) in profile"
+              :key="item.title"
               nuxt
               :to="item.path"
             >
@@ -52,8 +54,8 @@
             </template>
 
             <v-list-item
-              v-for="(item, i) in portfolio"
-              :key="i"
+              v-for="(item) in portfolio"
+              :key="item.title"
               nuxt
               :to="item.path"
             >
@@ -85,6 +87,55 @@
 
       <v-spacer />
 
+      <span>
+        <v-toolbar-items class="hidden-sm-and-down">
+          <v-menu
+            v-for="(button) in buttons_menu"
+            :key="button.title"
+            offset-y
+          >
+            <template #activator="{ on, attrs }">
+              <v-btn
+                text
+                nuxt
+                v-bind="attrs"
+                class="pa-2 rounded"
+                v-on="on"
+              >
+                {{ button.title }}
+              </v-btn>
+            </template>
+            <v-list>
+              <v-list-item v-for="(item, t) in button.endpoint_list" :key="t" link>
+                <nuxt-link class="text-decoration-none white--text" :to="item.path">
+                  <v-list-item-title><v-icon>{{ item.icon }}</v-icon> {{ item.title }}</v-list-item-title>
+                </nuxt-link>
+              </v-list-item>
+            </v-list>
+          </v-menu>
+          <v-menu
+            v-for="(button, y) in no_option_buttons"
+            :key="y"
+            offset-y
+          >
+            <template #activator="{ on, attrs }">
+              <v-btn
+                text
+                nuxt
+                v-bind="attrs"
+                class="pa-2 rounded"
+                :to="button.path"
+                v-on="on"
+              >
+                {{ button.title }}
+              </v-btn>
+            </template>
+          </v-menu>
+        </v-toolbar-items>
+      </span>
+
+      <v-spacer />
+
       <div class="text-center">
         <v-menu offset-y>
           <template #activator="{ on, attrs }">
@@ -98,7 +149,7 @@
             </v-btn>
           </template>
           <v-list>
-            <v-list-item v-for="(item, i) in items" :key="i">
+            <v-list-item v-for="(item) in items" :key="item.title">
               <v-list-item-title><a style="text-decoration=none" :href="item.link" target="_blank" rel="noopener noreferrer">{{ item.title }}</a></v-list-item-title>
             </v-list-item>
           </v-list>
@@ -113,8 +164,28 @@ export default {
   data () {
     return {
       drawer: false,
+      buttons_menu: [
+        {
+          title: 'Mon Profil',
+          endpoint_list: [
+            { title: 'Général', icon: 'mdi-account', path: '/profile/general_profile' },
+            { title: 'Mes passions', icon: 'mdi-heart', path: '/profile/hobbies' }]
+        },
+        {
+          title: 'Mon Portfolio',
+          endpoint_list: [
+            { title: 'Mes projets Web', icon: 'mdi-web', path: '/portfolio/portfolio_sites' },
+            { title: 'Mes projets Apps/Code', icon: 'mdi-application-cog', path: '/portfolio/portfolio_apps' },
+            { title: 'Mes projets Expériences', icon: 'mdi-flask', path: '/portfolio/portfolio_experiments' }
+          ]
+        }
+      ],
+      no_option_buttons: [
+        { title: 'Mes Posts', path: '/articles/articles_index' },
+        { title: 'Me Contacter', path: '/contacts' }
+      ],
       profile: [
-        { title: 'Mon profil', icon: 'mdi-face-recognition', path: '/profile/general_profile' },
+        { title: 'Mon profil', icon: 'mdi-account', path: '/profile/general_profile' },
         { title: 'Mes passions', icon: 'mdi-heart', path: '/profile/hobbies' }
       ],
       portfolio: [
