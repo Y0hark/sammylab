@@ -49,7 +49,7 @@ export default {
         },
         telegram: {
           link: 'https://t.me/Sammysterieux',
-          icon: 'mdi-telegram'
+          icon: 'mdi-android-messages'
         },
         github: {
           link: 'https://github.com/Y0hark',

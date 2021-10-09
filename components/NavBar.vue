@@ -93,6 +93,7 @@
             v-for="(button) in buttons_menu"
             :key="button.title"
             offset-y
+            open-on-hover
           >
             <template #activator="{ on, attrs }">
               <v-btn
