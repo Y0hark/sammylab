@@ -4,9 +4,9 @@
       <v-card-title primary-title>
         {{ experienceProfesionnelle.title }}
       </v-card-title>
-      <v-card-text>
+      <v-card-text align="center">
         <v-img
-          height="auto"
+          class="rounded"
           :src="experienceProfesionnelle.image.url"
         />
       </v-card-text>

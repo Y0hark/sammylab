@@ -4,10 +4,11 @@
       <v-card-title primary-title>
         {{ study.title }}
       </v-card-title>
-      <v-card-text>
+      <v-card-text align="center">
         <v-img
-          height="400px"
+          max-width="50vw"
           :src="study.cover.url"
+          class="rounded"
         />
       </v-card-text>
       <v-card-text>

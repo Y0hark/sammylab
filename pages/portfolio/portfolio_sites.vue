@@ -2,7 +2,7 @@
   <v-container grid-list-xs>
     <list-header :title="header.title" :description="header.description" />
 
-    <v-row v-for="project in projectsShowcases" :key="project.title">
+    <v-row v-for="project in projectsShowcasesToDisplay" :key="project.title">
       <v-col />
       <project-card v-if="project.project_category == 'web'" :project="project" :list-urls="project.showcase" />
       <v-col />
@@ -22,6 +22,15 @@ export default {
         title: 'Mes projets Web',
         description: 'C\'est dans cette page que vous trouverez une partie de tous les sites web sur lesquels j\'ai pu travailler! 👍'
       }
+    }
+  },
+  computed: {
+    // Fonction de tri des articles: tri en fonction de la date de publication
+    projectsShowcasesToDisplay () {
+      const arraySorted = this.projectsShowcases
+      arraySorted.sort((a, b) => new Date(b.date_project) - new Date(a.date_project))
+
+      return arraySorted
     }
   },
   apollo: {

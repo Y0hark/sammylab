@@ -24,3 +24,8 @@ export default {
   }
 }
 </script>
+<style lang="scss">
+  html {
+    white-space: nowrap;
+  }
+</style>

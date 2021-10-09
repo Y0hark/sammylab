@@ -10,7 +10,7 @@
 
     <list-header :title="experiences_header.title" :description="experiences_header.description" />
 
-    <v-row v-for="experience in experiences" :key="experience.title">
+    <v-row v-for="experience in experiencesToDisplay" :key="experience.title">
       <v-col />
       <experiences-pro :experience-profesionnelle="experience" />
       <v-col />
@@ -18,7 +18,7 @@
 
     <list-header :title="studies_header.title" :description="studies_header.description" />
 
-    <v-row v-for="study in studies" :key="study.title">
+    <v-row v-for="study in studiesToDisplay" :key="study.title">
       <v-col />
       <studies-card :study="study" />
       <v-col />
@@ -26,7 +26,7 @@
 
     <list-header :title="skills_header.title" :description="skills_header.description" />
 
-    <v-row v-for="skill in skills" :key="skill.title">
+    <v-row v-for="skill in skillsToDisplay" :key="skill.title">
       <v-col />
       <skills-card :skill="skill" />
       <v-col />
@@ -67,6 +67,27 @@ export default {
         title: 'Mes compétences',
         description: 'Et enfin, le détail de toutes mes compétences techniques. 👷‍♂️'
       }
+    }
+  },
+  computed: {
+    // Fonction de tri des articles: tri en fonction de la date de publication
+    studiesToDisplay () {
+      const arraySorted = this.studies
+      arraySorted.sort((a, b) => new Date(b.date_start) - new Date(a.date_start))
+
+      return arraySorted
+    },
+    experiencesToDisplay () {
+      const arraySorted = this.experiences
+      arraySorted.sort((a, b) => new Date(b.date_start) - new Date(a.date_start))
+
+      return arraySorted
+    },
+    skillsToDisplay () {
+      const arraySorted = this.skills
+      arraySorted.sort((a, b) => (b.mastery) - (a.mastery))
+
+      return arraySorted
     }
   },
   apollo: {

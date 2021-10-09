@@ -2,7 +2,7 @@
   <v-container grid-list-xs>
     <list-header :title="header.title" :description="header.description" />
 
-    <v-row v-for="project in projectsShowcases" :key="project.title">
+    <v-row v-for="project in projectsShowcasesToDisplay" :key="project.title">
       <v-col />
       <project-card v-if="project.project_category == 'exp'" :project="project" :list-urls="project.showcase" />
       <v-col />
@@ -23,6 +23,15 @@ export default {
         description: `Cette section est plus réservée à tout ce qui va s'éloigner un peu de mon corps de métier logiciel.
                       J'ai à coeur de m'essayer un peu à tout, alors quand je ferai de la robotique ou de l'embarqué par exemple, les projets s'afficheront ici! 😉🔬`
       }
+    }
+  },
+  computed: {
+    // Fonction de tri des articles: tri en fonction de la date de publication
+    projectsShowcasesToDisplay () {
+      const arraySorted = this.projectsShowcases
+      arraySorted.sort((a, b) => new Date(b.date_project) - new Date(a.date_project))
+
+      return arraySorted
     }
   },
   apollo: {
